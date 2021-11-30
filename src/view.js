@@ -1,5 +1,5 @@
 import './style.css';
-import { Event } from './event';
+import Event from './event';
 export default class View {
   constructor () {
     this.playEvent = new Event();
@@ -17,8 +17,17 @@ export default class View {
       });
 
       board.appendChild(cell);
+      return cell;
     });
 
     document.body.appendChild(board)
+  }
+
+  updateCell(data){
+    this.cells[data.cellIndex].innerHTML = data.player;
+  }
+
+  victory(winner) {
+    alert(`Winner is ${winner}`);
   }
 }
