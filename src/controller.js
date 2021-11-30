@@ -9,7 +9,8 @@ export default class Controller {
     this.view.playEvent.addListener(cellIndex => this.model.play(cellIndex));
     
     this.model.updateEvent.addListener(data => this.view.updateCell(data));
-    this.model.victoryEvent.addListener(winnder =>  this.view.victory(winnder))
+    this.model.victoryEvent.addListener(winnder =>  this.view.victory(winnder));
+    this.model.drawEvent.addListener(() => this.view.draw());
   }
 
   run() {

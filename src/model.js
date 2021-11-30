@@ -6,7 +6,8 @@ export default class Model {
     this.finished = false;
 
     this.updateEvent = new Event();
-    this.victoryEvent = new Event()
+    this.victoryEvent = new Event();
+    this.drawEvent = new Event();
   }
 
   play(move) {
@@ -48,7 +49,9 @@ export default class Model {
 
   draw() {
     const draw = this.board.every(i => i);
-
+    if(draw){
+      this.drawEvent.trigger();
+    }
     return draw;
   }
 }

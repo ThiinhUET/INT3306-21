@@ -30,4 +30,8 @@ export default class View {
   victory(winner) {
     alert(`Winner is ${winner}`);
   }
+
+  draw(){
+    alert("Draw match");
+  }
 }
